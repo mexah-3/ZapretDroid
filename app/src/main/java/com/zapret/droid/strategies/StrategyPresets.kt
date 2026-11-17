@@ -213,6 +213,38 @@ object StrategyPresets {
         dpiDesyncRepeats = 6,
         services = listOf(Service.YOUTUBE, Service.GOOGLE)
     )
+    
+    val YOUTUBE_BAT_2026 = Strategy(
+    id = "youtube_bat_2026",
+    name = "YouTube Bat 2026 (TS + Seqovl + IP-Zero)",
+    description = "Точная копия правила для Google/YouTube из рабочего батника",
+    tcpPorts = listOf(443),
+    udpPorts = emptyList(),
+    dpiDesync = listOf(DesyncMethod.FAKE, DesyncMethod.MULTISPLIT),
+    dpiDesyncRepeats = 8,
+    splitPos = SplitPos.POS_1,
+    seqovl = 681,
+    seqovlPattern = SeqovlPattern.GOOGLE_TLS,
+    fooling = listOf(FoolingMethod.TS),
+    fakeData = FakeData.TLS_GOOGLE,
+    fakeTlsMod = FakeTlsMod.DUPSID,
+    fakeTlsSni = "www.google.com",
+    ipIdZero = true,
+    services = listOf(Service.YOUTUBE, Service.GOOGLE)
+    )
+
+    val YOUTUBE_QUIC_BAT_2026 = Strategy(
+    id = "youtube_quic_bat_2026",
+    name = "YouTube QUIC UDP (11 повторов)",
+    description = "Пробивает блокировку видеопотока YouTube по UDP 443",
+    tcpPorts = emptyList(),
+    udpPorts = listOf(443),
+    dpiDesync = listOf(DesyncMethod.FAKE),
+    dpiDesyncRepeats = 11,
+    fakeData = FakeData.QUIC_GOOGLE,
+    services = listOf(Service.YOUTUBE, Service.GOOGLE)
+    )
+
 
     val ALL: List<Strategy> = listOf(
         GENERAL,
@@ -221,6 +253,6 @@ object StrategyPresets {
         ALT11, ALT12,
         FAKE_TLS_AUTO, FAKE_TLS_AUTO_DUPSID,
         SIMPLE_FAKE, SIMPLE_FAKE_UDP,
-        GOOGLE_IP_ZERO
+        GOOGLE_IP_ZERO, YOUTUBE_BAT_2026,YOUTUBE_BAT_2026 
     )
 }
