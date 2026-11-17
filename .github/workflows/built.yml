@@ -1,0 +1,37 @@
+name: Build APK
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Rust Android targets
+        run: |
+          rustup default stable
+          rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
+
+      - name: Fix libgcc for preinstalled NDK 27
+        run: |
+          find /usr/local/lib/android/sdk/ndk -name "libunwind.a" 2>/dev/null | while read f; do
+            dir=$(dirname "$f")
+            echo "INPUT(-lunwind)" > "$dir/libgcc.a"
+          done
+
+      - name: Build Debug APK
+        run: bash gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
