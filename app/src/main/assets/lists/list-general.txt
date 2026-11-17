@@ -1,32 +1,51 @@
 # General DPI bypass list — Discord, CDN, streaming
 # Based on Flowseal/zapret-discord-youtube list-general.txt
 
+dis.gd
+discord-attachments-uploads-prd.storage.googleapis.com
+discord.app
+discord.co
 discord.com
+discord.design
+discord.dev
+discord.gift
+discord.gifts
 discord.gg
 discord.media
+discord.new
+discord.store
+discord.status
+discord-activities.com
+discordactivities.com
 discordapp.com
 discordapp.net
 discordcdn.com
+discordmerch.com
+discordpartygames.com
+discordsays.com
+discordsez.com
 discordstatus.com
-cdn.discordapp.com
-media.discordapp.net
-images-ext-1.discordapp.net
-images-ext-2.discordapp.net
-dl.discordapp.net
-stable.dl2.discordapp.net
-ptb.discordapp.com
-canary.discordapp.com
-gateway.discord.gg
-streamkit.discordapp.com
-discord-attachments-uploads-prd.storage.googleapis.com
 
 # Cloudflare
-cloudflare.com
+^cloudflare-dns.com
+cloudflare-ech.com
+encryptedsni.com
+cloudflareaccess.com
+cloudflareapps.com
+cloudflarebolt.com
+cloudflareclient.com
+cloudflareinsights.com
+cloudflareok.com
+cloudflarepartners.com
+cloudflareportal.com
+cloudflarepreview.com
+cloudflareresolve.com
 cloudflaressl.com
-cloudflarestream.com
+cloudflarestatus.com
 cloudflarestorage.com
-workers.dev
-pages.dev
+cloudflarestream.com
+cloudflaretest.com
+cloudfront.net
 
 # Twitch / Streaming extras
 frankerfacez.com
@@ -53,3 +72,13 @@ steampowered.com
 steam-chat.com
 steamstatic.com
 akamaihd.net
+
+zendesk.com
+frankerfacez.com
+ffzap.com
+betterttv.net
+7tv.app
+7tv.io
+localizeapi.com
+klipy.com
+live-video.net
