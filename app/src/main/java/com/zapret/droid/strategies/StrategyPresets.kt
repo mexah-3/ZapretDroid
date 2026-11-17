@@ -246,13 +246,16 @@ object StrategyPresets {
     )
 
 
-    val ALL: List<Strategy> = listOf(
+        val ALL: List<Strategy> = listOf(
         GENERAL,
         ALT1, ALT2, ALT3, ALT4, ALT5,
         ALT6, ALT7, ALT8, ALT9, ALT10,
         ALT11, ALT12,
         FAKE_TLS_AUTO, FAKE_TLS_AUTO_DUPSID,
         SIMPLE_FAKE, SIMPLE_FAKE_UDP,
-        GOOGLE_IP_ZERO, YOUTUBE_BAT_2026,YOUTUBE_BAT_2026 
+        GOOGLE_IP_ZERO,
+        YOUTUBE_BAT_2026,
+        YOUTUBE_QUIC_BAT_2026,
+       
     )
 }
